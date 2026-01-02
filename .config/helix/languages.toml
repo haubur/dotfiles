@@ -1,0 +1,15 @@
+[[language]]
+name = "rust"
+file-types = ["rs"]
+auto-format = true
+roots = ["Cargo.toml", "Cargo.lock"]
+diagnostic-severity = "warning"
+comment-tokens = ["//", "///"]
+block-comment-tokens = { start = "/*", end = "*/" }
+indent = { tab-width = 4, unit = "  " }
+language-servers = ["rust-analyzer"]
+formatter = { command = "rustfmt" }
+
+[language-server.rust-analyzer.config]
+cargo.check = "clippy"
+cargo.features = "all"

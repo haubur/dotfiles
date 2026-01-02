@@ -1,0 +1,22 @@
+theme = "haubur"
+
+[editor]
+line-number = "relative"
+mouse = false
+continue-comments = false
+auto-completion = false
+trim-final-newlines = true
+trim-trailing-whitespace = true
+indent-heuristic = "tree-sitter"
+
+[editor.statusline]
+left = ["mode", "file-name", "position"]
+center = ["version-control"]
+right = ["spinner", "total-line-numbers", "diagnostics"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+diagnostics = ["warning", "error"]
+
+[editor.file-picker]
+hidden = false
