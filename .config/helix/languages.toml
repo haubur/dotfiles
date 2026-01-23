@@ -6,10 +6,18 @@ roots = ["Cargo.toml", "Cargo.lock"]
 diagnostic-severity = "warning"
 comment-tokens = ["//", "///"]
 block-comment-tokens = { start = "/*", end = "*/" }
-indent = { tab-width = 4, unit = "  " }
+indent = { tab-width = 4, unit = "    " }
 language-servers = ["rust-analyzer"]
-formatter = { command = "rustfmt" }
+formatter = { command = "rustfmt", args = ["--edition", "2024"] }
 
-[language-server.rust-analyzer.config]
-cargo.check = "clippy"
-cargo.features = "all"
+# https://github.com/helix-editor/helix/wiki/Language-Server-Configurations#pyright--ruff
+[[language]]
+name = "python"
+language-servers = [ "pyright", "ruff" ]
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]

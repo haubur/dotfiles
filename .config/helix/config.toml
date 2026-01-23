@@ -1,13 +1,14 @@
+# includes default values: https://docs.helix-editor.com/editor.html#editor-section
+
 theme = "haubur"
 
 [editor]
 line-number = "relative"
-mouse = false
 continue-comments = false
 auto-completion = false
 trim-final-newlines = true
 trim-trailing-whitespace = true
-indent-heuristic = "tree-sitter"
+auto-pairs = false
 
 [editor.statusline]
 left = ["mode", "file-name", "position"]
@@ -17,6 +18,11 @@ mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
 diagnostics = ["warning", "error"]
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "bar"
 
 [editor.file-picker]
 hidden = false
