@@ -10,6 +10,15 @@ indent = { tab-width = 4, unit = "    " }
 language-servers = ["rust-analyzer"]
 formatter = { command = "rustfmt", args = ["--edition", "2024"] }
 
+[language-server.vscode-html-language-server]
+command = "vscode-html-language-server"
+args = ["--stdio"]
+
+[[language]]
+name = "html"
+auto-format = false # unfortunately, formatter breaks syntax in <code> blocks
+language-servers = ["vscode-html-language-server"]
+
 # https://github.com/helix-editor/helix/wiki/Language-Server-Configurations#pyright--ruff
 [[language]]
 name = "python"

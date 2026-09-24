@@ -9,6 +9,8 @@ auto-completion = false
 trim-final-newlines = true
 trim-trailing-whitespace = true
 auto-pairs = false
+popup-border = "all"
+rulers = [120]
 
 [editor.statusline]
 left = ["mode", "file-name", "position"]
